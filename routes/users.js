@@ -47,7 +47,15 @@ router.delete('/', (req, res, next) => {
 // });
 
 router.patch('/', (req, res, next) => {        
-    console.log(res);
+    mysql.getConnection((error, conn) => {
+        conn.query(
+            'select * from users',
+            [req.body],
+            (error, resultado) => {
+                console.log(error, resultado);
+            }
+        )
+    })
 });
 
 
