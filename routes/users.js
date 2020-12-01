@@ -46,11 +46,8 @@ router.delete('/', (req, res, next) => {
 //     })
 // });
 
-router.patch('/', (req, res, next) => {    
-    const name = req.params.name_user
-        res.status(200).send({
-            message: `Listagem dos usuários: ${name}`,
-        });    
+router.patch('/', (req, res, next) => {        
+    console.log(res);
 });
 
 
