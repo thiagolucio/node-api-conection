@@ -40,11 +40,27 @@ router.delete('/', (req, res, next) => {
 });
 
 // PATCH ou LISTAGEM USERS
-router.patch('/', (req, res, next) => {    
-    res.status(200).send({
-        message: 'Listando todos os usuários'
-    })
+// router.patch('/', (req, res, next) => {    
+//     res.status(200).send({
+//         message: 'Listando todos os usuários ${}'
+//     })
+// });
+
+router.patch('/', (req, res, next) => {   
+    const id = req.params.id_user
+    const name = req.params.name_user
+    if (id === '1') {
+        res.status(200).send({
+            message: `Este ID está dentro de uma regra especifica == ${id} ${name}`,
+        });
+    } else {
+        res.status(200).send({
+            message: `Sucesso no GET do usuário por id == $${id} ${name}`,
+        });
+    }
 });
+
+
 
 
 // INSERINDO USUARIO
