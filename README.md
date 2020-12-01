@@ -21,3 +21,24 @@ Modelo de Dados:
 3) client: (id_type, id_user, cep, photos(?), phone)
 4) provider: (id_type, id_provider, providername, address, description, phone, photos(?))
 5) professional: (id_type, id_professional, professionalname, cep, description, phone, photos(?))
+
+
+### Informações de execucao EC2:
+- O projeto está na pasta "node-api-conection"
+- Fazer git pull no repositório do projeto.
+- Executar o PM2 para rodar os projetos.
+
+##### Comandos PM2:
+- pm2 -v : para verificar versão do pm2
+- pm2 list: para listar todos os aplicativos que estão rodando
+- killall node: Para matar os processos node que estiverem rodando:
+
+###### Para rodar o projeto:
+- pm2 start index.js --name=amigopet : Para rodar o aplicativo NodeJS
+
+###### Para reiniciar o projeto:
+- pm2 restart amigopet
+
+
+
+

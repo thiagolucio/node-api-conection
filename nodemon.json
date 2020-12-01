@@ -1,9 +1,9 @@
 {
     "env": {
-        "process.env.MYSQL_USER" : "root",
-        "process.env.MYSQL_PASSWORD" : "root",
-        "process.env.MYSQL_DATABASE" : "amigopet",
-        "process.env.MYSQL_HOST" : "localhost",
+        "process.env.MYSQL_USER" : "charco43_user",
+        "process.env.MYSQL_PASSWORD" : "tchan@21",
+        "process.env.MYSQL_DATABASE" : "charco43_amgpt",
+        "process.env.MYSQL_HOST" : "charcode.com.br",
         "process.env.MYSQL_PORT": 3306
     }
 }
