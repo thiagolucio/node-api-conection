@@ -2,37 +2,12 @@ const express = require('express');
 const router = express.Router();
 const mysql = require('../mysql').pool;
 
-// GET
+// GET ROTA USUARIO
 router.get('/', (req, res, next) => {
     res.status(200).send({
         message: 'Sucesso usando rota GET usuários'
     })
 });
-
-// POST
-router.post('/', (req, res, next) => {
-
-    mysql.getConnection((error, conn) => {
-        conn.query(
-            'INSERT INTO users (name_user) VALUES (?)',
-            [req.body.name_user],
-            (error, resultado, field) => {
-                conn.release();
-                if (error) {
-                    return res.status(500).send({
-                        error: error,
-                        response: null
-                    });
-                }
-                res.status(201).send({
-                    message: 'Usuário criado com Sucesso!',
-                    id_user:  resultado.insertId
-                });
-            }
-        )
-    })
-});
-
 
 // GET ID - USER
 router.get('/:id_user', (req, res, next) => {
@@ -68,6 +43,30 @@ router.delete('/', (req, res, next) => {
 router.patch('/', (req, res, next) => {    
     res.status(200).send({
         message: 'Listando todos os usuários'
+    })
+});
+
+
+// INSERINDO USUARIO
+router.post('/', (req, res, next) => {
+    mysql.getConnection((error, conn) => {
+        conn.query(
+            'INSERT INTO users (name_user) VALUES (?)',
+            [req.body.name_user],
+            (error, resultado, field) => {
+                conn.release();
+                if (error) {
+                    return res.status(500).send({
+                        error: error,
+                        response: null
+                    });
+                }
+                res.status(201).send({
+                    message: 'Usuário criado com Sucesso!',
+                    id_user:  resultado.insertId
+                });
+            }
+        )
     })
 });
 
