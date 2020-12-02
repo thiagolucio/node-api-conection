@@ -63,7 +63,11 @@ router.post('/', (req, res, next) => {
     mysql.getConnection((error, conn) => {
         conn.query(
             'INSERT INTO users (name_user, password, email) VALUES (?,?,?)',
-            [req.body.name_user, req.body.password, req.body.email],
+            [
+                req.body.name_user, 
+                req.body.password, 
+                req.body.email
+            ],
             (error, resultado, field) => {
                 conn.release();
                 if (error) {
@@ -81,7 +85,7 @@ router.post('/', (req, res, next) => {
                 });
             }
         )
-    })
+    });
 });
 
 module.exports = router;
