@@ -1,0 +1,18 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "charcode.com.br",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "Charcode BD Testes",
+            "group": "Charcode BDS",
+            "database": "charco43_amgpt",
+            "username": "charco43_user",
+            "password": "tchan@21"
+        }
+    ]
+}

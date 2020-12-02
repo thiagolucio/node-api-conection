@@ -10,9 +10,27 @@
 - Hospedado no Site da Charcode com MySQL
 - Server Host: charcode.com.br
 - Porta: 3306
-- Database: charco43_amgpt
+- Nome do Banco: charco43_amgpt
 - Usuário do Banco: charco43_user
 - Senha do Banco: tchan@21
+
+## Estrutura JSON de conexão:
+` {
+  "mysqlOptions": {
+    "authProtocol": "default"
+  },
+  "previewLimit": 50,
+  "server": "charcode.com.br",
+  "port": 3306,
+  "driver": "MySQL",
+  "name": "Charcode BD Testes",
+  "group": "Charcode BDS",
+  "database": "charco43_amgpt",
+  "username": "charco43_user",
+  "password": "tchan@21"
+} `
+
+
 
 
 Modelo de Dados:
@@ -34,7 +52,7 @@ Modelo de Dados:
 - killall node: Para matar os processos node que estiverem rodando:
 
 ###### Para rodar o projeto:
-- pm2 start index.js --name=amigopet : Para rodar o aplicativo NodeJS
+- pm2 start server.js --name=amigopet : Para rodar o aplicativo NodeJS
 
 ###### Para reiniciar o projeto:
 - pm2 restart amigopet

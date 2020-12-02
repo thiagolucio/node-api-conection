@@ -58,15 +58,12 @@ router.patch('/', (req, res, next) => {
     })
 });
 
-
-
-
 // INSERINDO USUARIO
 router.post('/', (req, res, next) => {
     mysql.getConnection((error, conn) => {
         conn.query(
-            'INSERT INTO users (name_user) VALUES (?)',
-            [req.body.name_user],
+            'INSERT INTO users (name_user, password, email) VALUES (?,?,?)',
+            [req.body.name_user, req.body.password, req.body.email],
             (error, resultado, field) => {
                 conn.release();
                 if (error) {
@@ -76,8 +73,11 @@ router.post('/', (req, res, next) => {
                     });
                 }
                 res.status(201).send({
-                    message: 'Usuário criado com Sucesso!',
-                    id_user:  resultado.insertId
+                    message: 'Usuário Adicionado com Sucesso!',
+                    id_user:  resultado.insertId,
+                    name_user:  resultado.insertNameUser,
+                    password:  resultado.insertPasswordUser,
+                    email:  resultado.insertEmailUser,
                 });
             }
         )
