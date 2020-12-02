@@ -71,6 +71,8 @@ router.post('/', (req, res, next) => {
             (error, resultado, field) => {
                 conn.release();
                 if (error) {
+                    console.log("Uh-oh, ScrapeNexts Error!: " + err + " using " + url);
+                    errors.nexts.push(url);
                     return res.status(500).send({
                         error: error,
                         response: null
