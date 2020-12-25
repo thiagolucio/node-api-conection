@@ -1,17 +1,90 @@
 
-SELECIONAR TABELAS:
-
-select * from users;
-
-ADICIONAR USUARIO EM TABLE
-
-insert into users (name_user)
-values ('Raquel Gouvea Lucio Bittencourt');
-
-INSERT INTO `amigopet`.`users` (`name_user`) VALUES ('Thiago');
-
-DELETAR USUARIO:
+1) CRIACAO TABELA USERS:
 
 
+
+
+
+
+2) CRIACAO TABELA PETS:
+CREATE TABLE `charco43_amgpt`.`pets` (
+  `id_pets` INT NOT NULL AUTO_INCREMENT,
+  `name_pet` VARCHAR(45) NULL,
+  `id_user` INT NOT NULL,
+  `race_pet` VARCHAR(45) NULL,
+  `gender_pet` VARCHAR(45) NULL,
+  `description_pet` VARCHAR(1000) NULL,
+  PRIMARY KEY (`id_pets`, `id_user`));
+
+
+
+3) CRIACAO TABELA PROFISSIONAL:
+CREATE TABLE `charco43_amgpt`.`professionals` (
+  `id_professional` INT NOT NULL,
+  `name_professional` VARCHAR(220) NULL,
+  `address_professional` VARCHAR(220) NULL,
+  `phone_professional` INT NULL,
+  `logo_professional` BLOB NULL,
+  `description_professional` VARCHAR(1500) NULL,
+  PRIMARY KEY (`id_professional`));
+
+
+
+4) CRIACAO TABELA FORNECEDORES:
+CREATE TABLE `charco43_amgpt`.`providers` (
+  `id_provider` INT NOT NULL AUTO_INCREMENT,
+  `name_provider` VARCHAR(200) NULL,
+  `phone_provider` INT NULL,
+  `address_provider` VARCHAR(420) NULL,
+  `description_provider` VARCHAR(1600) NULL,
+  `logo_provider` BLOB NULL,
+  PRIMARY KEY (`id_provider`));
+
+
+
+
+::: ALGUNS COMANDOS BASICOS MYSQL USADOS NO SISTEMA::::
+
+- Deletando usuario tabela users:
+DELETE FROM `amigopet`.`users` WHERE (`id_user` = '2')
+
+- Inserindo usuário tabela users:
+insert into users (name_user) values ('Raquel Gouvea Lucio Bittencourt');
+INSERT INTO `charco43_amgpt`.`users` (`name_user`) VALUES ('Thiago');
+
+
+
+
+
+
+
+
+
+
+
+:::: MYSQL COMANDOS BASICOS :::
+
+1) cria a base de dados mysql:
+CREATE DATABASE nome_db;
+
+2) Mostra as bases de dados do mysql
+SHOW DATABASES;
+
+3) Acessa a base de dados pelo nome:
+USE nome_db; 
+
+4) Criando tabela users com seus atributos:
+CREATE TABLE users (nome VARCHAR(220), email VARCHAR(220)); 
+
+5) Mostrando Tabelas do Banco:
+SHOW TABLES; = mostra tabelas existentes no banco
+
+6) Inserindo valores em uma tabela (ex: tabela users):
+INSERT INTO users (name_user, password, email) VALUES ('Reginaldo', '84565', 'regis@gmail.com');
+
+7) Deletando Usuários:
 DELETE FROM `amigopet`.`users` WHERE (`id_user` = '3');
 DELETE FROM `amigopet`.`users` WHERE (`id_user` = '2')
+
+
+
