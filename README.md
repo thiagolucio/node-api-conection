@@ -14,7 +14,7 @@
 - Usuário do Banco: charco43_user
 - Senha do Banco: tchan@21
 
-## Estrutura JSON de conexão:
+## Dados JSON de conexão:
 ` {
   "mysqlOptions": {
     "authProtocol": "default"
