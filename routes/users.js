@@ -24,13 +24,13 @@ router.get('/:id_user', (req, res, next) => {
 });
 
 // POST ID - INSERE USER
-router.post('/:id_user', (req, res, next) => {
-    const id = req.params.id_user
-    res.status(200).send({
-        message: 'Usuário Alterado com sucesso!',
+// router.post('/:id_user', (req, res, next) => {
+//     const id = req.params.id_user
+//     res.status(200).send({
+//         message: 'Usuário Alterado com sucesso!',
             
-    })
-});
+//     })
+// });
 
 // DELETANDO USUARIOS
 router.delete('/', (req, res, next) => {    
